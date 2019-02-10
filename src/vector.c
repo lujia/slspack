@@ -8,7 +8,18 @@ slspack_vec slspack_vec_create(int n)
     assert(n >= 0);
 
     v.n = n;
-    v.d = slspack_malloc(sizeof(double) * n);
+    v.d = slspack_malloc(sizeof(*v.d) * n);
+
+    /* init */
+#if 1
+    {
+        int i;
+
+        for (i = 0; i < n; i++) v.d[i] = 0.;
+    }
+#else
+    bzero(v.d, n * sizeof(*v.d));
+#endif
 
     return v;
 }
@@ -38,9 +49,17 @@ void slspack_vec_set_value_by_array(slspack_vec x, double *val)
 {
     int n = x.n;
 
+    if (n <= 0) return;
+
     assert(val != NULL);
-    assert(n >= 0);
     memcpy(x.d, val, sizeof(*val) * n);
+}
+
+void slspack_vec_add_value_by_index(slspack_vec x, int i, double val)
+{
+    assert(i >= 0 && i < x.n);
+
+    x.d[i] += val;
 }
 
 void slspack_vec_set_value_by_index(slspack_vec x, int i, double val)
@@ -69,13 +88,10 @@ double slspack_vec_get_value_by_index(slspack_vec x, int i)
 /* copy */
 void slspack_vec_copy(slspack_vec x, const slspack_vec y)
 {
-    int i, n = x.n;
-
     assert(x.n == y.n);
+    assert(x.n >= 0);
 
-    for (i = 0; i < n; i++) {
-        x.d[i] = y.d[i];
-    }
+    memcpy(x.d, y.d, x.n * sizeof(*x.d));
 }
 
 double slspack_vec_norm(slspack_vec x)

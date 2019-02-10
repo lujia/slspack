@@ -8,6 +8,9 @@
 slspack_vec slspack_vec_create(int n);
 void slspack_vec_destroy(slspack_vec *v);
 
+/* add value */
+void slspack_vec_add_value_by_index(slspack_vec x, int i, double val);
+
 /* set value */
 void slspack_vec_set_value(slspack_vec x, double val);
 void slspack_vec_set_value_by_array(slspack_vec x, double *val);
