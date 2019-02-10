@@ -17,19 +17,12 @@ typedef struct slspack_mat_csr_
     int num_rows;
     int num_cols;
     int num_nnzs;
+
     int *Ap;
     int *Aj;
     double *Ax;
 
 } slspack_mat_csr;
-
-typedef struct slspack_mat_entry_
-{
-    int i;
-    int j;
-    double x;
-
-} slspack_mat_entry;
 
 typedef struct slspack_vec_
 {
