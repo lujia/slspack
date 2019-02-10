@@ -73,8 +73,9 @@ void slspack_vec_get_value(double *val, slspack_vec x)
 {
     int n = x.n;
 
-    assert(val != NULL);
     assert(n >= 0);
+    if (n > 0) assert(val != NULL);
+
     memcpy(val, x.d, sizeof(*val) * n);
 }
 
@@ -98,6 +99,8 @@ double slspack_vec_norm(slspack_vec x)
 {
     int i, n = x.n;
     double s = 0.;
+
+    assert(n >= 0);
 
     for (i = 0; i < n; i++) {
         s += x.d[i] * x.d[i];
