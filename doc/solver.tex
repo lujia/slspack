@@ -1,0 +1,267 @@
+\chapter{Linear Solvers}
+
+\section{Solver Types}
+The solver type is defined as \verb|SLSPACK_SOLVER_TYPE|,
+
+\begin{evb}
+/* solver type */
+typedef enum SLSPACK_SOLVER_TYPE_
+{
+#if USE_LASPACK
+    SLSPACK_SOLVER_LASPACK,   /* laspack */
+#endif
+
+#if USE_SSPARSE
+    SLSPACK_SOLVER_UMFPACK,   /* ssparse, umf */
+    SLSPACK_SOLVER_KLU,       /* ssparse, klu */
+#endif
+
+#if USE_MUMPS
+    SLSPACK_SOLVER_MUMPS,     /* mumps */
+#endif
+
+#if USE_PETSC
+    SLSPACK_SOLVER_PETSC,     /* petsc */
+#endif
+
+#if USE_LIS
+    SLSPACK_SOLVER_LIS,       /* lis */
+#endif
+
+#if USE_FASP
+    SLSPACK_SOLVER_FASP,      /* FASP */
+    SLSPACK_SOLVER_AMG,       /* amg from FASP */
+    SLSPACK_SOLVER_FMG,       /* fmg from FASP */
+#endif
+
+#if USE_SUPERLU
+    SLSPACK_SOLVER_SUPERLU,   /* superlu */
+#endif
+
+#if USE_PARDISO
+    SLSPACK_SOLVER_PARDISO,   /* pardiso */
+#endif
+
+#if USE_HSL_MI20
+    SLSPACK_SOLVER_MI20AMG,   /* MI20 AMG */
+#endif
+
+#if USE_SX_AMG
+    SLSPACK_SOLVER_SXAMG,     /* SXAMG */
+#endif
+
+} SLSPACK_SOLVER_TYPE;
+\end{evb}
+
+SLSPack implements interfaces to other famous linear solver packages, such as
+\verb|LASPACK|, \verb|SSPARSE|, \verb|MUMPS|, \verb|PETSC|, \verb|LIS|,
+\verb|FASP|, \verb|SUPERLU|, \verb|PARDISO|, \verb|HSL_MI20| and \verb|SXAMG|.
+SLSPack also has two internal solvers, GMRES(m) and BICGSTAB.
+
+\section{Solver Management}
+
+\begin{figure}[!htb]
+\begin{evb}
+{
+    slspack_mat_csr A;
+    SLSPACK_SOLVER solver;
+    slspack_vec x;
+    slspack_vec b;
+
+    /* setup A, x, b */
+    x = slspack_vec_create(n);
+    b = slspack_vec_create(n);
+
+    A = slspack_mat_create(nrows, ncols, Ap, Aj, Ax);
+    for (i = 0; i < n; i++) {
+        slspack_vec_set_value_by_index(x, i, v1);
+        slspack_vec_set_value_by_index(b, i, v2);
+    }
+
+    /* 1: create solver: any detected solver works */
+    slspack_solver_create(solver, SLSPACK_SOLVER_AMG);
+
+    /* 2: change default settings (optional) */
+    slspack_solver_set_restart(solver, m);
+    slspack_solver_set_maxit(solver, itr_max);
+
+    /* 3: assemble solver */
+    slspack_solver_assemble(solver, A, x, b);
+
+    /* 4: solve */
+    slspack_solver_solve(solver);
+
+    /* 5: destroy solver */
+    slspack_solver_destroy(solver);
+
+    /* get value */
+    for (i = 0; i < n; i++) {
+        value = slspack_vec_get_value_by_index(x, i);
+    }
+
+    slspack_mat_destroy(A);
+    slspack_vec_destroy(x);
+    slspack_vec_destroy(b);
+}
+\end{evb}
+    \caption{Solution process}
+    \label{solution-proc}
+\end{figure}
+
+Figure \ref{solution-proc} shows solution process, which includes the following steps:
+\begin{enumerate}
+    \item create solver;
+    \item change default solver parameters, which is optional;
+    \item assemble solver;
+    \item solve the linear system;
+    \item destroy solver, matrix and vectors;
+\end{enumerate}
+
+\subsection{Create}
+\vb{slspack_solver_create} creates solver object using solver type.
+\begin{evb}
+void slspack_solver_create(SLSPACK_SOLVER *s, SLSPACK_SOLVER_TYPE s_type);
+\end{evb}
+
+\subsection{Assemble}
+\vb{slspack_solver_assemble} assembles solver object.
+\begin{evb}
+void slspack_solver_assemble(SLSPACK_SOLVER *s, slspack_mat_csr Ax, slspack_vec x,
+    slspack_vec b);
+\end{evb}
+
+\subsection{Solve}
+\vb{slspack_solver_solve} solves linear system.
+\begin{evb}
+int slspack_solver_solve(SLSPACK_SOLVER *solver);
+\end{evb}
+
+\subsection{Destroy}
+\vb{slspack_solver_destroy} destroys solver object and releases internal
+memory.
+\begin{evb}
+void slspack_solver_destroy(SLSPACK_SOLVER *s);
+\end{evb}
+
+\section{Solver Settings}
+
+These setting functions should be applied after the solver object is created and before
+it is assembled.
+
+\subsection{General Settings}
+
+\vb{slspack_solver_set_rtol} sets relative tolerence.
+\begin{evb}
+void slspack_solver_set_rtol(SLSPACK_SOLVER *s, double tol);
+\end{evb}
+
+\vb{slspack_solver_set_atol} sets absolute tolerence.
+\begin{evb}
+void slspack_solver_set_atol(SLSPACK_SOLVER *s, double tol);
+\end{evb}
+
+\vb{slspack_solver_set_rbtol} sets relative b norm tolerence.
+\begin{evb}
+void slspack_solver_set_rbtol(SLSPACK_SOLVER *s, double tol);
+\end{evb}
+
+\begin{evb}
+/* set maximal number of iteration */
+void slspack_solver_set_maxit(SLSPACK_SOLVER *s, int maxit);
+\end{evb}
+
+\vb{slspack_solver_set_restart} set the number of restart.
+\begin{evb}
+void slspack_solver_set_restart(SLSPACK_SOLVER *s, int m);
+\end{evb}
+
+\vb{slspack_solver_set_verbosity} sets verbosity of a solver.
+\begin{evb}
+void slspack_solver_set_verbosity(SLSPACK_SOLVER *s, int v);
+\end{evb}
+
+\vb{slspack_solver_get_residual} gets residual.
+\begin{evb}
+double slspack_solver_get_residual(SLSPACK_SOLVER s);
+\end{evb}
+
+\vb{slspack_solver_get_nits} gets number of iteration.
+\begin{evb}
+int slspack_solver_get_nits(SLSPACK_SOLVER s);
+\end{evb}
+
+\subsection{AMG Solver Setting}
+\vb{slspack_solver_amg_set_pars} sets new parameters to AMG solver.
+\begin{evb}
+void slspack_solver_amg_set_pars(SLSPACK_SOLVER *s, AMG_param par);
+\end{evb}
+
+\subsection{FASP Solver Setting}
+\vb{slspack_fasp_set_pars} sets parameters. If parameter pointer is not \vb{NULL},
+default parameters will be overriden.
+\begin{evb}
+void slspack_fasp_set_pars(SLSPACK_SOLVER *solver, input_param *inparam,
+    ITS_param *itsparam, AMG_param *amgparam, ILU_param *iluparam,
+    SWZ_param *schparam);
+\end{evb}
+
+\subsection{LIS Solver Setting}
+\vb{slspack_solver_lis_set_pars} sets solver id and preconditioner id.
+\begin{evb}
+static const char * lis_solver[] = {
+    "-i bicgstab",
+    "-i bicgstabl",
+    "-i cg",
+    "-i cgs",
+    "-i bicg",
+    "-i bicgsafe",
+    "-i bicr",
+    "-i cr",
+    "-i bicrstab",
+    "-i bicrsafe",
+    "-i idrs",
+    "-i crs",
+    "-i gpbicr",
+    "-i gpbicg",
+    "-i tfqmr",
+    "-i orthomin",
+    "-i gmres",
+    "-i fgmres",
+    "-i minres",
+};
+
+static const char * lis_pc[] = {
+    "-p none",
+    "-p ilut",
+    "-p ilu -ilu_fill 1",
+    "-p is",
+    "-p sainv",
+    "-p saamg -saamg_unsym -saamg_theta 0.5",
+    "-p hybrid",
+    "-p iluc",
+    "-p ssor",
+    "-p jacobi",
+};
+
+void slspack_solver_lis_set_pars(SLSPACK_SOLVER *solver, unsigned int solver_id,
+    unsigned int pc_id);
+\end{evb}
+
+\vb{slspack_solver_lis_set_option} sets any legal LIS options.
+\begin{evb}
+void slspack_solver_lis_set_option(SLSPACK_SOLVER *solver, char *o);
+\end{evb}
+
+\subsection{SXAMG Setting}
+\vb{slspack_solver_sxamg_set_pars} sets parameters.
+\begin{evb}
+void slspack_solver_sxamg_set_pars(SLSPACK_SOLVER *solver, SX_AMG_PARS *pars);
+\end{evb}
+
+\subsection{PETSc Setting}
+\vb{slspack_solver_petsc_setting} sets PETSc parameters by a function.
+\begin{evb}
+typedef void (*solver_petsc_setting)(void *ksp, void *pc);
+
+void slspack_solver_petsc_setting(solver_petsc_setting func);
+\end{evb}

@@ -1,0 +1,36 @@
+\chapter{Utilities}
+
+\section{Print}
+
+\vb{slspack_printf} outputs to stdout.
+\begin{evb}
+int slspack_printf(const char *fmt, ...);
+\end{evb}
+
+\vb{slspack_error} prints output error message and quits with error code.
+\begin{evb}
+void slspack_error(int code, const char *fmt, ...);
+\end{evb}
+
+\vb{slspack_warning} print warning info.
+\begin{evb}
+void slspack_warning(const char *fmt, ...);
+\end{evb}
+
+\section{Memory}
+The following functions provide memory allocation, calloc, reallocation, freeing and copying.
+\begin{evb}
+void * slspack_malloc(size_t n);
+void * slspack_calloc(size_t n);
+void slspack_free(void *p);
+
+void slspack_memcpy_on(void *dst, const void *src, size_t n);
+void * slspack_copy_on(const void *src, size_t n);
+\end{evb}
+
+\section{Performance}
+
+\vb{slspack_get_time} gets current time point.
+\begin{evb}
+double slspack_get_time();
+\end{evb}

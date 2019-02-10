@@ -1,0 +1,178 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+A	solver-laspack.c	/^    QMatrix     *A;$/;"	m	struct:LAS_DATA_	file:
+A	solver-petsc.c	/^    Mat       A;$/;"	m	struct:PTS_DATA_	file:
+Ad	solver-umfpack.c	/^    double *Ad;$/;"	m	struct:SSP_DATA_	file:
+Ai	solver-umfpack.c	/^    int    *Ai;$/;"	m	struct:SSP_DATA_	file:
+Ap	solver-umfpack.c	/^    int    *Ap;$/;"	m	struct:SSP_DATA_	file:
+B	solver-laspack.c	/^    Vector      *B;$/;"	m	struct:LAS_DATA_	file:
+CNTL	solver-mumps.c	13;"	d	file:
+FASP_AMG_DATA	solver-amg.c	/^} FASP_AMG_DATA;$/;"	t	typeref:struct:FASP_AMG_DATA_	file:
+FASP_AMG_DATA_	solver-amg.c	/^typedef struct FASP_AMG_DATA_$/;"	s	file:
+FASP_DATA	solver-fasp.c	/^} FASP_DATA;$/;"	t	typeref:struct:FASP_DATA_	file:
+FASP_DATA_	solver-fasp.c	/^typedef struct FASP_DATA_$/;"	s	file:
+ICNTL	solver-mumps.c	12;"	d	file:
+INFO	solver-mumps.c	14;"	d	file:
+INFOG	solver-mumps.c	15;"	d	file:
+Init	solver-laspack.c	/^static int Init(LAS_DATA *las_data, SLSPACK_SOLVER *solver)$/;"	f	file:
+LAS_DATA	solver-laspack.c	/^} LAS_DATA;$/;"	t	typeref:struct:LAS_DATA_	file:
+LAS_DATA_	solver-laspack.c	/^typedef struct LAS_DATA_$/;"	s	file:
+MPS_DATA	solver-mumps.c	/^} MPS_DATA;$/;"	t	typeref:struct:MPS_DATA_	file:
+MPS_DATA_	solver-mumps.c	/^typedef struct MPS_DATA_$/;"	s	file:
+NPETPCs	solver-petsc.c	38;"	d	file:
+NPETSolvers	solver-petsc.c	37;"	d	file:
+Nlis_pc	solver-lis.c	44;"	d	file:
+Nlis_solver	solver-lis.c	43;"	d	file:
+PTS_DATA	solver-petsc.c	/^} PTS_DATA;$/;"	t	typeref:struct:PTS_DATA_	file:
+PTS_DATA_	solver-petsc.c	/^typedef struct PTS_DATA_$/;"	s	file:
+SLSPACK_ATOL	slspack.c	/^double SLSPACK_ATOL        = 1e-7;$/;"	v
+SLSPACK_BREAKDOWN	slspack.c	/^double SLSPACK_BREAKDOWN   = 1e-40;$/;"	v
+SLSPACK_MAXIT	slspack.c	/^int SLSPACK_MAXIT          = 1000;$/;"	v
+SLSPACK_RBN	slspack.c	/^double SLSPACK_RBN         = 1e-7;$/;"	v
+SLSPACK_RESTART	slspack.c	/^int SLSPACK_RESTART        = 30;$/;"	v
+SLSPACK_RTOL	slspack.c	/^double SLSPACK_RTOL        = 1e-7;$/;"	v
+SSP_DATA	solver-umfpack.c	/^} SSP_DATA;$/;"	t	typeref:struct:SSP_DATA_	file:
+SSP_DATA_	solver-umfpack.c	/^typedef struct SSP_DATA_$/;"	s	file:
+SUPERLU_DATA	solver-superlu.c	/^} SUPERLU_DATA;$/;"	t	typeref:struct:SUPERLU_DATA_	file:
+SUPERLU_DATA_	solver-superlu.c	/^typedef struct SUPERLU_DATA_$/;"	s	file:
+SXAMG_DATA	solver-sxamg.c	/^} SXAMG_DATA;$/;"	t	typeref:struct:SXAMG_DATA_	file:
+SXAMG_DATA_	solver-sxamg.c	/^typedef struct SXAMG_DATA_$/;"	s	file:
+U	solver-laspack.c	/^    Vector      *U;$/;"	m	struct:LAS_DATA_	file:
+__STDC_VERSION__	solver-fasp.c	7;"	d	file:
+__STDC_VERSION__	solver-mumps.c	7;"	d	file:
+amgpar	solver-fasp.c	/^    AMG_param amgpar;           \/\/ parameters for AMG$/;"	m	struct:FASP_DATA_	file:
+analysis_type	solver-mumps.c	/^    int                analysis_type;$/;"	m	struct:MPS_DATA_	file:
+analysis_type	solver-mumps.c	/^static int analysis_type = 0;$/;"	v	file:
+assembled	solver-petsc.c	/^    int      assembled;$/;"	m	struct:PTS_DATA_	file:
+b	solver-petsc.c	/^    Vec       b;$/;"	m	struct:PTS_DATA_	file:
+did	solver-mumps.c	/^    DMUMPS_STRUC_C     *did;$/;"	m	struct:MPS_DATA_	file:
+factored	solver-mumps.c	/^    int                factored;$/;"	m	struct:MPS_DATA_	file:
+factored	solver-umfpack.c	/^    int    factored;$/;"	m	struct:SSP_DATA_	file:
+fillin	solver-mumps.c	/^    int                fillin;$/;"	m	struct:MPS_DATA_	file:
+fillin	solver-mumps.c	/^static int fillin = 50;$/;"	v	file:
+gmres_restart	solver-laspack.c	/^    int         gmres_restart;$/;"	m	struct:LAS_DATA_	file:
+ilupar	solver-fasp.c	/^    ILU_param ilupar;           \/\/ parameters for ILU$/;"	m	struct:FASP_DATA_	file:
+inipar	solver-fasp.c	/^    input_param inipar;         \/\/ parameters from input $/;"	m	struct:FASP_DATA_	file:
+itspar	solver-fasp.c	/^    ITS_param itspar;           \/\/ parameters for itsolver$/;"	m	struct:FASP_DATA_	file:
+ksp	solver-petsc.c	/^    KSP       ksp;$/;"	m	struct:PTS_DATA_	file:
+ksp_table	solver-laspack.c	/^static const IterProcType ksp_table[] = {$/;"	v	file:
+ksp_type	solver-laspack.c	/^    int         ksp_type;$/;"	m	struct:LAS_DATA_	file:
+laspack_callback	solver-laspack.c	/^static void laspack_callback(int it, double rNorm, double bNorm, IterIdType id)$/;"	f	file:
+lis_pc	solver-lis.c	/^static char * lis_pc[] = {$/;"	v	file:
+lis_solver	solver-lis.c	/^static char * lis_solver[] = {$/;"	v	file:
+mat_add_entries	solver-laspack.c	/^static int mat_add_entries(LAS_DATA *las_data, int nrows, int *rows, int ncols, int *cols, double *values)$/;"	f	file:
+mumps_destroy	solver-mumps.c	/^static int mumps_destroy(MPS_DATA *mpsd)$/;"	f	file:
+mumps_fac	solver-mumps.c	/^static int mumps_fac(MPS_DATA *mpsd, SLSPACK_SOLVER *solver)$/;"	f	file:
+mumps_init	solver-mumps.c	/^static int mumps_init(MPS_DATA *mpsd, int verb)$/;"	f	file:
+num	solver-umfpack.c	/^    void   *num;$/;"	m	struct:SSP_DATA_	file:
+options	solver-superlu.c	/^    superlu_options_t options;$/;"	m	struct:SUPERLU_DATA_	file:
+ordering	solver-mumps.c	/^    int                ordering;$/;"	m	struct:MPS_DATA_	file:
+ordering	solver-mumps.c	/^static int ordering = 0;$/;"	v	file:
+ordering_values	solver-mumps.c	/^static const int ordering_values[] = {7, 0, 2, 3, 4, 5, 6};$/;"	v	file:
+pars	solver-amg.c	/^    AMG_param pars;$/;"	m	struct:FASP_AMG_DATA_	file:
+pars	solver-sxamg.c	/^    SX_AMG_PARS pars;$/;"	m	struct:SXAMG_DATA_	file:
+pc	solver-petsc.c	/^    PC        pc;$/;"	m	struct:PTS_DATA_	file:
+pc_table	solver-laspack.c	/^static const PrecondProcType pc_table[] = {ILUPrecond, JacobiPrecond, SSORPrecond};$/;"	v	file:
+pc_type	solver-fasp.c	/^static short pc_type[] = {$/;"	v	file:
+pc_type	solver-laspack.c	/^    int         pc_type;$/;"	m	struct:LAS_DATA_	file:
+petsc_assemble	solver-petsc.c	/^static int petsc_assemble(PTS_DATA *pts, SLSPACK_SOLVER *solver)$/;"	f	file:
+petsc_create	solver-petsc.c	/^static int petsc_create(PTS_DATA *pts, SLSPACK_SOLVER *solver)$/;"	f	file:
+petsc_destroy	solver-petsc.c	/^static int petsc_destroy(PTS_DATA *pts)$/;"	f	file:
+petsc_iluk_level	solver-petsc.c	/^static int petsc_iluk_level = 1;$/;"	v	file:
+petsc_mat_add_entries	solver-petsc.c	/^static int petsc_mat_add_entries(PTS_DATA *pts, int nrows, int *rows, int ncols, int *cols,$/;"	f	file:
+petsc_pc_list	solver-petsc.c	/^static PCType petsc_pc_list[] = $/;"	v	file:
+petsc_pc_right	solver-petsc.c	/^static int petsc_pc_right = 0;$/;"	v	file:
+petsc_rhs_add_entries	solver-petsc.c	/^static int petsc_rhs_add_entries(PTS_DATA *pts, int n, int *ni, double *values)$/;"	f	file:
+petsc_solver_list	solver-petsc.c	/^static KSPType petsc_solver_list[] = $/;"	v	file:
+refine	solver-mumps.c	/^    int                refine;$/;"	m	struct:MPS_DATA_	file:
+refine	solver-mumps.c	/^static int refine = 0;$/;"	v	file:
+rhs_add_entries	solver-laspack.c	/^static int rhs_add_entries(LAS_DATA *las_data, int n, int *ni, double *values)$/;"	f	file:
+slspack_calloc	utils.c	/^void * slspack_calloc(size_t n) $/;"	f
+slspack_copy_on	utils.c	/^void * slspack_copy_on(const void *src, size_t n)$/;"	f
+slspack_error	utils.c	/^void slspack_error(int code, const char *fmt, ...)$/;"	f
+slspack_free	utils.c	/^void slspack_free(void *p) $/;"	f
+slspack_get_time	utils.c	/^double slspack_get_time()$/;"	f
+slspack_get_time	utils.c	/^double slspack_get_time(void)$/;"	f
+slspack_malloc	utils.c	/^void * slspack_malloc(size_t n) $/;"	f
+slspack_mat_create	matrix-utils.c	/^slspack_mat_csr slspack_mat_create(int nrows, int ncols, int *Ap, int *Aj, double *Ax)$/;"	f
+slspack_mat_destroy	matrix-utils.c	/^void slspack_mat_destroy(slspack_mat_csr *A)$/;"	f
+slspack_mat_transpose	matrix-utils.c	/^slspack_mat_csr slspack_mat_transpose(const slspack_mat_csr A)$/;"	f
+slspack_memcpy_on	utils.c	/^void slspack_memcpy_on(void *dst, const void *src, size_t n)$/;"	f
+slspack_printf	utils.c	/^int slspack_printf(const char *fmt, ...)$/;"	f
+slspack_solver_amg	solver-amg.c	/^int slspack_solver_amg(SLSPACK_SOLVER *solver)$/;"	f
+slspack_solver_amg_assemble	solver-amg.c	/^static void slspack_solver_amg_assemble(dCSRmat *A, dvector *b, dvector *x, SLSPACK_SOLVER *solver)$/;"	f	file:
+slspack_solver_amg_create	solver-amg.c	/^void slspack_solver_amg_create(SLSPACK_SOLVER *s)$/;"	f
+slspack_solver_amg_destroy	solver-amg.c	/^void slspack_solver_amg_destroy(SLSPACK_SOLVER *s)$/;"	f
+slspack_solver_amg_set_pars	solver-amg.c	/^void slspack_solver_amg_set_pars(SLSPACK_SOLVER *s, AMG_param par)$/;"	f
+slspack_solver_assemble	slspack.c	/^void slspack_solver_assemble(SLSPACK_SOLVER *s, slspack_mat_csr Ax, slspack_vec x, slspack_vec b)$/;"	f
+slspack_solver_create	slspack.c	/^void slspack_solver_create(SLSPACK_SOLVER *s, SLSPACK_SOLVER_TYPE s_type)$/;"	f
+slspack_solver_destroy	slspack.c	/^void slspack_solver_destroy(SLSPACK_SOLVER *s)$/;"	f
+slspack_solver_fasp	solver-fasp.c	/^int slspack_solver_fasp(SLSPACK_SOLVER *solver)$/;"	f
+slspack_solver_fasp_assemble	solver-fasp.c	/^static void slspack_solver_fasp_assemble(dCSRmat *A, dvector *b, dvector *x, SLSPACK_SOLVER *solver)$/;"	f	file:
+slspack_solver_fasp_create	solver-fasp.c	/^void slspack_solver_fasp_create(SLSPACK_SOLVER *s)$/;"	f
+slspack_solver_fasp_destroy	solver-fasp.c	/^void slspack_solver_fasp_destroy(SLSPACK_SOLVER *s)$/;"	f
+slspack_solver_fasp_param_input_init	solver-fasp.c	/^static void slspack_solver_fasp_param_input_init(SLSPACK_SOLVER *s)$/;"	f	file:
+slspack_solver_fasp_set_pars	solver-fasp.c	/^void slspack_solver_fasp_set_pars(SLSPACK_SOLVER *solver, input_param *inparam, ITS_param *itsparam,$/;"	f
+slspack_solver_get_nits	slspack.c	/^int slspack_solver_get_nits(SLSPACK_SOLVER s)$/;"	f
+slspack_solver_get_residual	slspack.c	/^double slspack_solver_get_residual(SLSPACK_SOLVER s)$/;"	f
+slspack_solver_klu	solver-klu.c	/^int slspack_solver_klu(SLSPACK_SOLVER *solver)$/;"	f
+slspack_solver_laspack	solver-laspack.c	/^int slspack_solver_laspack(SLSPACK_SOLVER *solver)$/;"	f
+slspack_solver_laspack_create	solver-laspack.c	/^void slspack_solver_laspack_create(SLSPACK_SOLVER *s)$/;"	f
+slspack_solver_laspack_destroy	solver-laspack.c	/^void slspack_solver_laspack_destroy(SLSPACK_SOLVER *s)$/;"	f
+slspack_solver_laspack_set_pars	solver-laspack.c	/^void slspack_solver_laspack_set_pars(SLSPACK_SOLVER *solver, int solver_type, int pc_type)$/;"	f
+slspack_solver_lis	solver-lis.c	/^int slspack_solver_lis(SLSPACK_SOLVER *solver)$/;"	f
+slspack_solver_lis_create	solver-lis.c	/^void slspack_solver_lis_create(SLSPACK_SOLVER *solver)$/;"	f
+slspack_solver_lis_destroy	solver-lis.c	/^void slspack_solver_lis_destroy(SLSPACK_SOLVER *solver)$/;"	f
+slspack_solver_lis_set_option	solver-lis.c	/^void slspack_solver_lis_set_option(SLSPACK_SOLVER *solver, char *o)$/;"	f
+slspack_solver_lis_set_pars	solver-lis.c	/^void slspack_solver_lis_set_pars(SLSPACK_SOLVER *solver, unsigned int solver_id, unsigned int pc_id)$/;"	f
+slspack_solver_mi20amg	solver-mi20.c	/^int slspack_solver_mi20amg(SLSPACK_SOLVER *solver)$/;"	f
+slspack_solver_mumps	solver-mumps.c	/^int slspack_solver_mumps(SLSPACK_SOLVER *solver)$/;"	f
+slspack_solver_mumps_create	solver-mumps.c	/^void slspack_solver_mumps_create(SLSPACK_SOLVER *s)$/;"	f
+slspack_solver_mumps_destroy	solver-mumps.c	/^void slspack_solver_mumps_destroy(SLSPACK_SOLVER *s)$/;"	f
+slspack_solver_pardiso	solver-pardiso.c	/^int slspack_solver_pardiso(SLSPACK_SOLVER * solver)$/;"	f
+slspack_solver_petsc	solver-petsc.c	/^int slspack_solver_petsc(SLSPACK_SOLVER *solver)$/;"	f
+slspack_solver_petsc_create	solver-petsc.c	/^void slspack_solver_petsc_create(SLSPACK_SOLVER *s)$/;"	f
+slspack_solver_petsc_destroy	solver-petsc.c	/^void slspack_solver_petsc_destroy(SLSPACK_SOLVER *s)$/;"	f
+slspack_solver_petsc_setting	solver-petsc.c	/^void slspack_solver_petsc_setting(solver_petsc_setting func)$/;"	f
+slspack_solver_set_atol	slspack.c	/^void slspack_solver_set_atol(SLSPACK_SOLVER *s, double tol)$/;"	f
+slspack_solver_set_maxit	slspack.c	/^void slspack_solver_set_maxit(SLSPACK_SOLVER *s, int maxit)$/;"	f
+slspack_solver_set_rbtol	slspack.c	/^void slspack_solver_set_rbtol(SLSPACK_SOLVER *s, double tol)$/;"	f
+slspack_solver_set_restart	slspack.c	/^void slspack_solver_set_restart(SLSPACK_SOLVER *s, int m)$/;"	f
+slspack_solver_set_rtol	slspack.c	/^void slspack_solver_set_rtol(SLSPACK_SOLVER *s, double tol)$/;"	f
+slspack_solver_set_verbosity	slspack.c	/^void slspack_solver_set_verbosity(SLSPACK_SOLVER *s, int v)$/;"	f
+slspack_solver_solve	slspack.c	/^int slspack_solver_solve(SLSPACK_SOLVER *solver)$/;"	f
+slspack_solver_superlu	solver-superlu.c	/^int slspack_solver_superlu(SLSPACK_SOLVER *solver)$/;"	f
+slspack_solver_superlu_create	solver-superlu.c	/^void slspack_solver_superlu_create(SLSPACK_SOLVER *s)$/;"	f
+slspack_solver_superlu_destroy	solver-superlu.c	/^void slspack_solver_superlu_destroy(SLSPACK_SOLVER *s)$/;"	f
+slspack_solver_sxamg	solver-sxamg.c	/^int slspack_solver_sxamg(SLSPACK_SOLVER *solver)$/;"	f
+slspack_solver_sxamg_create	solver-sxamg.c	/^void slspack_solver_sxamg_create(SLSPACK_SOLVER *s)$/;"	f
+slspack_solver_sxamg_destroy	solver-sxamg.c	/^void slspack_solver_sxamg_destroy(SLSPACK_SOLVER *s)$/;"	f
+slspack_solver_sxamg_set_pars	solver-sxamg.c	/^void slspack_solver_sxamg_set_pars(SLSPACK_SOLVER *solver, SX_AMG_PARS *pars)$/;"	f
+slspack_solver_umfpack	solver-umfpack.c	/^int slspack_solver_umfpack(SLSPACK_SOLVER *solver)$/;"	f
+slspack_solver_umfpack_create	solver-umfpack.c	/^void slspack_solver_umfpack_create(SLSPACK_SOLVER *s)$/;"	f
+slspack_solver_umfpack_destroy	solver-umfpack.c	/^void slspack_solver_umfpack_destroy(SLSPACK_SOLVER *s)$/;"	f
+slspack_vec_copy	vector.c	/^void slspack_vec_copy(slspack_vec x, const slspack_vec y)$/;"	f
+slspack_vec_create	vector.c	/^slspack_vec slspack_vec_create(int n)$/;"	f
+slspack_vec_destroy	vector.c	/^void slspack_vec_destroy(slspack_vec *v)$/;"	f
+slspack_vec_get_value	vector.c	/^void slspack_vec_get_value(double *val, slspack_vec x)$/;"	f
+slspack_vec_get_value_by_index	vector.c	/^double slspack_vec_get_value_by_index(slspack_vec x, int i)$/;"	f
+slspack_vec_norm	vector.c	/^double slspack_vec_norm(slspack_vec x)$/;"	f
+slspack_vec_set_value	vector.c	/^void slspack_vec_set_value(slspack_vec x, double val)$/;"	f
+slspack_vec_set_value_by_array	vector.c	/^void slspack_vec_set_value_by_array(slspack_vec x, double *val)$/;"	f
+slspack_vec_set_value_by_index	vector.c	/^void slspack_vec_set_value_by_index(slspack_vec x, int i, double val)$/;"	f
+slspack_verbosity	utils.c	/^int slspack_verbosity = 2;$/;"	v
+slspack_warning	utils.c	/^void slspack_warning(const char *fmt, ...)$/;"	f
+solver_petsc_finalize	solver-petsc.c	/^static void solver_petsc_finalize(void)$/;"	f	file:
+solver_petsc_initialize	solver-petsc.c	/^static void solver_petsc_initialize(void)$/;"	f	file:
+solver_petsc_setting_func	solver-petsc.c	/^static solver_petsc_setting solver_petsc_setting_func = NULL;$/;"	v	file:
+solver_type_intl	solver-fasp.c	/^static short solver_type_intl[] = {$/;"	v	file:
+swzpar	solver-fasp.c	/^    SWZ_param swzpar;           \/\/ parameters for Schwarz method$/;"	m	struct:FASP_DATA_	file:
+sym	solver-umfpack.c	/^    void   *sym;$/;"	m	struct:SSP_DATA_	file:
+umfpack_destroy	solver-umfpack.c	/^static int umfpack_destroy(SSP_DATA *sspd)$/;"	f	file:
+umfpack_factor	solver-umfpack.c	/^static int umfpack_factor(SSP_DATA *sspd, SLSPACK_SOLVER *solver)$/;"	f	file:
+verb	solver-mumps.c	/^    int                verb;$/;"	m	struct:MPS_DATA_	file:
+x	solver-petsc.c	/^    Vec       x;$/;"	m	struct:PTS_DATA_	file:

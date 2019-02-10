@@ -1,0 +1,33 @@
+ 
+
+matrix-utils.o: matrix-utils.c ../include/config.h ../include/data-types.h ../include/matrix-utils.h ../include/utils.h
+
+slspack.o: slspack.c ../include/config.h ../include/data-types.h ../include/matrix-utils.h ../include/slspack.h ../include/solver-amg.h ../include/solver-fasp.h ../include/solver-klu.h ../include/solver-laspack.h ../include/solver-lis.h ../include/solver-mi20.h ../include/solver-mumps.h ../include/solver-pardiso.h ../include/solver-petsc.h ../include/solver-superlu.h ../include/solver-sxamg.h ../include/solver-umfpack.h ../include/utils.h ../include/vector.h
+
+solver-amg.o: solver-amg.c ../include/config.h ../include/data-types.h ../include/matrix-utils.h ../include/solver-amg.h ../include/utils.h
+
+solver-fasp.o: solver-fasp.c ../include/config.h ../include/data-types.h ../include/solver-fasp.h ../include/utils.h
+
+solver-klu.o: solver-klu.c ../include/config.h ../include/data-types.h ../include/matrix-utils.h ../include/solver-klu.h ../include/utils.h
+
+solver-laspack.o: solver-laspack.c ../include/config.h ../include/data-types.h ../include/solver-laspack.h ../include/utils.h
+
+solver-lis.o: solver-lis.c ../include/config.h ../include/data-types.h ../include/solver-lis.h ../include/utils.h
+
+solver-mi20.o: solver-mi20.c ../include/config.h ../include/data-types.h ../include/matrix-utils.h ../include/solver-mi20.h ../include/utils.h
+
+solver-mumps.o: solver-mumps.c ../include/config.h ../include/data-types.h ../include/solver-mumps.h ../include/utils.h
+
+solver-pardiso.o: solver-pardiso.c ../include/config.h ../include/data-types.h ../include/solver-pardiso.h ../include/utils.h
+
+solver-petsc.o: solver-petsc.c ../include/config.h ../include/data-types.h ../include/solver-petsc.h ../include/utils.h
+
+solver-superlu.o: solver-superlu.c ../include/config.h ../include/data-types.h ../include/solver-superlu.h ../include/utils.h
+
+solver-sxamg.o: solver-sxamg.c ../include/config.h ../include/data-types.h ../include/matrix-utils.h ../include/solver-sxamg.h ../include/utils.h
+
+solver-umfpack.o: solver-umfpack.c ../include/config.h ../include/data-types.h ../include/solver-umfpack.h ../include/utils.h
+
+utils.o: utils.c ../include/config.h ../include/utils.h
+
+vector.o: vector.c ../include/config.h ../include/data-types.h ../include/matrix-utils.h ../include/utils.h ../include/vector.h

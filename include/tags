@@ -1,0 +1,96 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+A	type-defs.h	/^    slspack_mat_csr A;$/;"	m	struct:SLSPACK_SOLVER_
+Aj	type-defs.h	/^    int *Aj;$/;"	m	struct:slspack_mat_csr_
+Ap	type-defs.h	/^    int *Ap;$/;"	m	struct:slspack_mat_csr_
+Ax	type-defs.h	/^    double *Ax;$/;"	m	struct:slspack_mat_csr_
+SLSPACK_SLSPACK_H	slspack.h	3;"	d
+SLSPACK_MATRIX_UTILS_H	matrix-utils.h	3;"	d
+SLSPACK_MVOPS_H	mvops.h	3;"	d
+SLSPACK_SOLVER	type-defs.h	/^} SLSPACK_SOLVER;$/;"	t	typeref:struct:SLSPACK_SOLVER_
+SLSPACK_SOLVER_	type-defs.h	/^typedef struct SLSPACK_SOLVER_$/;"	s
+SLSPACK_SOLVER_AMG	type-defs.h	/^    SLSPACK_SOLVER_AMG,       \/* amg from FASP *\/$/;"	e	enum:SLSPACK_SOLVER_TYPE_
+SLSPACK_SOLVER_AMG_H	solver-amg.h	3;"	d
+SLSPACK_SOLVER_FASP	type-defs.h	/^    SLSPACK_SOLVER_FASP,      \/* FASP *\/$/;"	e	enum:SLSPACK_SOLVER_TYPE_
+SLSPACK_SOLVER_FASP_H	solver-fasp.h	3;"	d
+SLSPACK_SOLVER_FMG	type-defs.h	/^    SLSPACK_SOLVER_FMG,       \/* fmg from FASP *\/$/;"	e	enum:SLSPACK_SOLVER_TYPE_
+SLSPACK_SOLVER_KLU	type-defs.h	/^    SLSPACK_SOLVER_KLU,       \/* ssparse, klu *\/$/;"	e	enum:SLSPACK_SOLVER_TYPE_
+SLSPACK_SOLVER_KLU_H	solver-klu.h	3;"	d
+SLSPACK_SOLVER_LASPACK	type-defs.h	/^    SLSPACK_SOLVER_LASPACK,   \/* laspack *\/$/;"	e	enum:SLSPACK_SOLVER_TYPE_
+SLSPACK_SOLVER_LASPACK_H	solver-laspack.h	3;"	d
+SLSPACK_SOLVER_LIS	type-defs.h	/^    SLSPACK_SOLVER_LIS,       \/* lis *\/$/;"	e	enum:SLSPACK_SOLVER_TYPE_
+SLSPACK_SOLVER_LIS_H	solver-lis.h	3;"	d
+SLSPACK_SOLVER_MI20AMG	type-defs.h	/^    SLSPACK_SOLVER_MI20AMG,   \/* MI20 AMG *\/$/;"	e	enum:SLSPACK_SOLVER_TYPE_
+SLSPACK_SOLVER_MI20_H	solver-mi20.h	3;"	d
+SLSPACK_SOLVER_MUMPS	type-defs.h	/^    SLSPACK_SOLVER_MUMPS,     \/* mumps *\/$/;"	e	enum:SLSPACK_SOLVER_TYPE_
+SLSPACK_SOLVER_MUMPS_H	solver-mumps.h	3;"	d
+SLSPACK_SOLVER_PARDISO	type-defs.h	/^    SLSPACK_SOLVER_PARDISO,   \/* pardiso *\/$/;"	e	enum:SLSPACK_SOLVER_TYPE_
+SLSPACK_SOLVER_PARDISO_H	solver-pardiso.h	3;"	d
+SLSPACK_SOLVER_PETSC	type-defs.h	/^    SLSPACK_SOLVER_PETSC,     \/* petsc *\/$/;"	e	enum:SLSPACK_SOLVER_TYPE_
+SLSPACK_SOLVER_PETSC_H	solver-petsc.h	3;"	d
+SLSPACK_SOLVER_SUPERLU	type-defs.h	/^    SLSPACK_SOLVER_SUPERLU,   \/* superlu *\/$/;"	e	enum:SLSPACK_SOLVER_TYPE_
+SLSPACK_SOLVER_SUPERLU_H	solver-superlu.h	3;"	d
+SLSPACK_SOLVER_SXAMG	type-defs.h	/^    SLSPACK_SOLVER_SXAMG,     \/* SXAMG *\/$/;"	e	enum:SLSPACK_SOLVER_TYPE_
+SLSPACK_SOLVER_SXAMG_H	solver-sxamg.h	3;"	d
+SLSPACK_SOLVER_TYPE	type-defs.h	/^} SLSPACK_SOLVER_TYPE;$/;"	t	typeref:enum:SLSPACK_SOLVER_TYPE_
+SLSPACK_SOLVER_TYPE_	type-defs.h	/^typedef enum SLSPACK_SOLVER_TYPE_$/;"	g
+SLSPACK_SOLVER_UMFPACK	type-defs.h	/^    SLSPACK_SOLVER_UMFPACK,   \/* ssparse, umf *\/$/;"	e	enum:SLSPACK_SOLVER_TYPE_
+SLSPACK_SOLVER_UMFPACK_H	solver-umfpack.h	3;"	d
+SLSPACK_TYPES_H	type-defs.h	2;"	d
+SLSPACK_UTILS_H	utils.h	3;"	d
+SLSPACK_VECTOR_H	vector.h	3;"	d
+WITH_MUMPS	solver-amg.h	13;"	d
+WITH_MUMPS	solver-fasp.h	12;"	d
+WITH_PARDISO	solver-amg.h	12;"	d
+WITH_PARDISO	solver-fasp.h	11;"	d
+WITH_UMFPACK	solver-amg.h	11;"	d
+WITH_UMFPACK	solver-fasp.h	10;"	d
+__STDC_VERSION__	solver-amg.h	16;"	d
+assembled	type-defs.h	/^    int assembled;$/;"	m	struct:SLSPACK_SOLVER_
+d	type-defs.h	/^    double *d;$/;"	m	struct:slspack_vec_
+fasp	type-defs.h	/^    struct FASP_DATA_     *fasp;$/;"	m	struct:SLSPACK_SOLVER_	typeref:struct:SLSPACK_SOLVER_::FASP_DATA_
+fasp_amg	type-defs.h	/^    struct FASP_AMG_DATA_ *fasp_amg;$/;"	m	struct:SLSPACK_SOLVER_	typeref:struct:SLSPACK_SOLVER_::FASP_AMG_DATA_
+fasp_pc	type-defs.h	/^    int fasp_pc;$/;"	m	struct:SLSPACK_SOLVER_
+fasp_solver	type-defs.h	/^    int fasp_solver;$/;"	m	struct:SLSPACK_SOLVER_
+i	type-defs.h	/^    int i;$/;"	m	struct:slspack_mat_entry_
+j	type-defs.h	/^    int j;$/;"	m	struct:slspack_mat_entry_
+laspack	type-defs.h	/^    struct LAS_DATA_ *laspack;$/;"	m	struct:SLSPACK_SOLVER_	typeref:struct:SLSPACK_SOLVER_::LAS_DATA_
+laspack_pc	type-defs.h	/^    int laspack_pc;$/;"	m	struct:SLSPACK_SOLVER_
+laspack_solver	type-defs.h	/^    int laspack_solver;$/;"	m	struct:SLSPACK_SOLVER_
+lis	type-defs.h	/^    void *lis;$/;"	m	struct:SLSPACK_SOLVER_
+lis_pc	type-defs.h	/^    int lis_pc;$/;"	m	struct:SLSPACK_SOLVER_
+lis_solver	type-defs.h	/^    int lis_solver;$/;"	m	struct:SLSPACK_SOLVER_
+slspack_mat_csr	type-defs.h	/^} slspack_mat_csr;$/;"	t	typeref:struct:slspack_mat_csr_
+slspack_mat_csr_	type-defs.h	/^typedef struct slspack_mat_csr_$/;"	s
+slspack_mat_entry	type-defs.h	/^} slspack_mat_entry;$/;"	t	typeref:struct:slspack_mat_entry_
+slspack_mat_entry_	type-defs.h	/^typedef struct slspack_mat_entry_$/;"	s
+slspack_vec	type-defs.h	/^} slspack_vec;$/;"	t	typeref:struct:slspack_vec_
+slspack_vec_	type-defs.h	/^typedef struct slspack_vec_$/;"	s
+maxit	type-defs.h	/^    int maxit;                      \/* maximal number of iteration *\/$/;"	m	struct:SLSPACK_SOLVER_
+mumps	type-defs.h	/^    struct MPS_DATA_ *mumps;$/;"	m	struct:SLSPACK_SOLVER_	typeref:struct:SLSPACK_SOLVER_::MPS_DATA_
+n	type-defs.h	/^    int n;$/;"	m	struct:slspack_vec_
+nits	type-defs.h	/^    int nits;                       \/* number of iteraion, return value *\/$/;"	m	struct:SLSPACK_SOLVER_
+num_cols	type-defs.h	/^    int num_cols;$/;"	m	struct:slspack_mat_csr_
+num_nnzs	type-defs.h	/^    int num_nnzs;$/;"	m	struct:slspack_mat_csr_
+num_rows	type-defs.h	/^    int num_rows;$/;"	m	struct:slspack_mat_csr_
+petsc	type-defs.h	/^    struct PTS_DATA_ *petsc;$/;"	m	struct:SLSPACK_SOLVER_	typeref:struct:SLSPACK_SOLVER_::PTS_DATA_
+petsc_pc	type-defs.h	/^    int petsc_pc;$/;"	m	struct:SLSPACK_SOLVER_
+petsc_solver	type-defs.h	/^    int petsc_solver;$/;"	m	struct:SLSPACK_SOLVER_
+residual	type-defs.h	/^    double residual;                \/* residual, return value *\/$/;"	m	struct:SLSPACK_SOLVER_
+restart	type-defs.h	/^    int restart;                    \/* used by gmres *\/$/;"	m	struct:SLSPACK_SOLVER_
+rhs	type-defs.h	/^    slspack_vec rhs;$/;"	m	struct:SLSPACK_SOLVER_
+solver_petsc_setting	solver-petsc.h	/^typedef void (*solver_petsc_setting)(void *ksp, void *pc);$/;"	t
+ssparse	type-defs.h	/^    struct SSP_DATA_ *ssparse;$/;"	m	struct:SLSPACK_SOLVER_	typeref:struct:SLSPACK_SOLVER_::SSP_DATA_
+superlu	type-defs.h	/^    struct SUPERLU_DATA_ *superlu;$/;"	m	struct:SLSPACK_SOLVER_	typeref:struct:SLSPACK_SOLVER_::SUPERLU_DATA_
+sxamg	type-defs.h	/^    struct SXAMG_DATA_ *sxamg;$/;"	m	struct:SLSPACK_SOLVER_	typeref:struct:SLSPACK_SOLVER_::SXAMG_DATA_
+tol_abs	type-defs.h	/^    double tol_abs;                 \/* absolute tolerance *\/$/;"	m	struct:SLSPACK_SOLVER_
+tol_rbn	type-defs.h	/^    double tol_rbn;                 \/* relative b norm *\/$/;"	m	struct:SLSPACK_SOLVER_
+tol_rel	type-defs.h	/^    double tol_rel;                 \/* relative tolerance *\/$/;"	m	struct:SLSPACK_SOLVER_
+type	type-defs.h	/^    SLSPACK_SOLVER_TYPE type;$/;"	m	struct:SLSPACK_SOLVER_
+verb	type-defs.h	/^    int verb;$/;"	m	struct:SLSPACK_SOLVER_
+x	type-defs.h	/^    double x;$/;"	m	struct:slspack_mat_entry_
+x	type-defs.h	/^    slspack_vec x;$/;"	m	struct:SLSPACK_SOLVER_
