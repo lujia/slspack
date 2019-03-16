@@ -30,7 +30,7 @@ void slspack_solver_superlu_destroy(SLSPACK_SOLVER *s)
 int slspack_solver_superlu(SLSPACK_SOLVER *solver)
 {
     SuperMatrix A, L, U, B;
-    slspack_mat_csr Ai = solver->A;
+    SLSPACK_MAT Ai = solver->A;
     int *perm_r;
     int *perm_c, i;
     int info;

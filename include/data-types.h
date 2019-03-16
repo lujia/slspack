@@ -9,7 +9,7 @@
 
 #include "config.h"
 
-typedef struct slspack_mat_csr_
+typedef struct SLSPACK_MAT_
 {
     int num_rows;
     int num_cols;
@@ -19,7 +19,7 @@ typedef struct slspack_mat_csr_
     int *Aj;
     double *Ax;
 
-} slspack_mat_csr;
+} SLSPACK_MAT;
 
 typedef struct slspack_vec_
 {
@@ -137,7 +137,7 @@ typedef struct SLSPACK_SOLVER_
 #endif
 
     /* matrix */
-    slspack_mat_csr A;
+    SLSPACK_MAT A;
 
     /* solver info */
     SLSPACK_SOLVER_TYPE type;

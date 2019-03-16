@@ -6,12 +6,12 @@
 #include "utils.h"
 
 /* free functions */
-void slspack_mat_destroy(slspack_mat_csr *A);
+void slspack_mat_destroy(SLSPACK_MAT *A);
 
 /* create csr matrix */
-slspack_mat_csr slspack_mat_create(int nrows, int ncols, int *Ap, int *Aj, double *Ax);
+SLSPACK_MAT slspack_mat_create(int nrows, int ncols, int *Ap, int *Aj, double *Ax);
 
 /* transpose */
-slspack_mat_csr slspack_mat_transpose(const slspack_mat_csr A);
+SLSPACK_MAT slspack_mat_transpose(const SLSPACK_MAT A);
 
 #endif

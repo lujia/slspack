@@ -9,7 +9,7 @@ int slspack_solver_klu(SLSPACK_SOLVER *solver)
 {
     double time0;
     double *x = solver->x.d;
-    slspack_mat_csr A = solver->A, Ta;
+    SLSPACK_MAT A = solver->A, Ta;
 
     klu_symbolic *sym ;
     klu_numeric *num ;

@@ -111,9 +111,9 @@ void slspack_solver_create(SLSPACK_SOLVER *s, SLSPACK_SOLVER_TYPE s_type)
     s->assembled = 0;
 }
 
-void slspack_solver_assemble(SLSPACK_SOLVER *s, slspack_mat_csr Ax, slspack_vec x, slspack_vec b)
+void slspack_solver_assemble(SLSPACK_SOLVER *s, SLSPACK_MAT Ax, slspack_vec x, slspack_vec b)
 {
-    slspack_mat_csr A;
+    SLSPACK_MAT A;
     double t = 0.;
 
     assert(s != NULL);

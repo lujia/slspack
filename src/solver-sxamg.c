@@ -27,7 +27,7 @@ void slspack_solver_sxamg_destroy(SLSPACK_SOLVER *s)
 
 int slspack_solver_sxamg(SLSPACK_SOLVER *solver)
 {
-    slspack_mat_csr A = solver->A;
+    SLSPACK_MAT A = solver->A;
     SX_INT *Aj, *Ap, nnz, n, i;
     SX_FLOAT *Ax;
     SX_MAT XA;

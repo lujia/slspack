@@ -20,7 +20,7 @@
 void slspack_solver_create(SLSPACK_SOLVER *s, SLSPACK_SOLVER_TYPE s_type);
 
 /* assemble solver */
-void slspack_solver_assemble(SLSPACK_SOLVER *s, slspack_mat_csr A, slspack_vec x, slspack_vec b);
+void slspack_solver_assemble(SLSPACK_SOLVER *s, SLSPACK_MAT A, slspack_vec x, slspack_vec b);
 
 /* destroy solver */
 void slspack_solver_destroy(SLSPACK_SOLVER *s);

@@ -1,6 +1,6 @@
 #include "matrix-utils.h"
 
-void slspack_mat_destroy(slspack_mat_csr *A)
+void slspack_mat_destroy(SLSPACK_MAT *A)
 {
     if (A == NULL) return;
 
@@ -11,9 +11,9 @@ void slspack_mat_destroy(slspack_mat_csr *A)
     bzero(A, sizeof(*A));
 }
 
-slspack_mat_csr slspack_mat_create(int nrows, int ncols, int *Ap, int *Aj, double *Ax)
+SLSPACK_MAT slspack_mat_create(int nrows, int ncols, int *Ap, int *Aj, double *Ax)
 {
-    slspack_mat_csr A;
+    SLSPACK_MAT A;
 
     assert(nrows > 0);
     assert(ncols > 0);
@@ -30,9 +30,9 @@ slspack_mat_csr slspack_mat_create(int nrows, int ncols, int *Ap, int *Aj, doubl
     return A;
 }
 
-slspack_mat_csr slspack_mat_transpose(const slspack_mat_csr A)
+SLSPACK_MAT slspack_mat_transpose(const SLSPACK_MAT A)
 {
-    slspack_mat_csr T;
+    SLSPACK_MAT T;
 
     assert(A.num_rows > 0 && A.num_cols > 0);
 

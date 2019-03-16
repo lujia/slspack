@@ -1,9 +1,9 @@
 
 #include "slspack.h"
 
-static slspack_mat_csr laplacian_5pt(const int N)
+static SLSPACK_MAT laplacian_5pt(const int N)
 {
-    slspack_mat_csr A;
+    SLSPACK_MAT A;
     int nz = 0;
     int i, j;
 
@@ -65,7 +65,7 @@ int main(void)
     int m = 30;
     int itr_max = 3000;
 
-    slspack_mat_csr A;
+    SLSPACK_MAT A;
     SLSPACK_SOLVER solver;
     slspack_vec xg;
     slspack_vec bc;

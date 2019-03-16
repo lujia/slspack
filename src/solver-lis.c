@@ -68,7 +68,7 @@ int slspack_solver_lis(SLSPACK_SOLVER *solver)
 {
     double time0;
     double *x = solver->x.d;
-    slspack_mat_csr A = solver->A;
+    SLSPACK_MAT A = solver->A;
 
     LIS_MATRIX lA;
     LIS_VECTOR lx, lb;

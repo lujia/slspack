@@ -8,7 +8,7 @@
 
 int slspack_solver_mi20amg(SLSPACK_SOLVER *solver)
 {
-    slspack_mat_csr A = solver->A;
+    SLSPACK_MAT A = solver->A;
     int n = A.num_rows;
     void *keep;
     struct mi20_control control;

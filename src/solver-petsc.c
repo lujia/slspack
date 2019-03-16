@@ -55,7 +55,7 @@ static void solver_petsc_finalize(void)
 
 static int petsc_create(PTS_DATA *pts, SLSPACK_SOLVER *solver)
 {
-    slspack_mat_csr A = solver->A;
+    SLSPACK_MAT A = solver->A;
     PetscInt N = A.num_rows, Nlocal = A.num_rows;
     PetscInt i, prealloc, *d_nnz, *o_nnz;
     int petsc_solver_default = solver->petsc_solver;
@@ -218,7 +218,7 @@ static int petsc_rhs_add_entries(PTS_DATA *pts, int n, int *ni, double *values)
 
 static int petsc_assemble(PTS_DATA *pts, SLSPACK_SOLVER *solver)
 {
-    slspack_mat_csr A = solver->A;
+    SLSPACK_MAT A = solver->A;
     int N = A.num_rows;
 
     if (pts->assembled) return 0;

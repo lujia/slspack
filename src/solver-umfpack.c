@@ -37,7 +37,7 @@ static int umfpack_factor(SSP_DATA *sspd, SLSPACK_SOLVER *solver)
     int n = solver->A.num_rows, nnz = solver->A.Ap[solver->A.num_rows];
     int status;
     double time0;
-    slspack_mat_csr A = solver->A;
+    SLSPACK_MAT A = solver->A;
     int end;
 
     if (sspd->factored) return 0;

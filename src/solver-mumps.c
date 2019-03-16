@@ -74,7 +74,7 @@ static int mumps_fac(MPS_DATA *mpsd, SLSPACK_SOLVER *solver)
     int i, j, k, nz, *icntl, *job;
     int nrow = solver->A.num_rows;
     double time0;
-    slspack_mat_csr A = solver->A;
+    SLSPACK_MAT A = solver->A;
 
     if (mpsd->factored) return 0;
 
