@@ -29,7 +29,7 @@ int slspack_solver_sxamg(SLSPACK_SOLVER *solver)
 {
     SLSPACK_MAT A = solver->A;
     SX_INT *Aj, *Ap, nnz, n, i;
-    SX_FLOAT *Ax;
+    SX_FLT *Ax;
     SX_MAT XA;
     SX_VEC b, x;
     SX_RTN rtn;
@@ -51,11 +51,11 @@ int slspack_solver_sxamg(SLSPACK_SOLVER *solver)
         for (i = 0; i < A.Ap[n]; i++) Aj[i] = A.Aj[i];
     }
 
-    if (sizeof(double) == sizeof(SX_FLOAT)) {
-        Ax = (SX_FLOAT *) A.Ax;
+    if (sizeof(double) == sizeof(SX_FLT)) {
+        Ax = (SX_FLT *) A.Ax;
     }
     else {
-        Ax = slspack_malloc(sizeof(SX_FLOAT) * nnz);
+        Ax = slspack_malloc(sizeof(SX_FLT) * nnz);
         for (i = 0; i < A.Ap[n]; i++) Ax[i] = A.Ax[i];
     }
 
@@ -92,7 +92,7 @@ int slspack_solver_sxamg(SLSPACK_SOLVER *solver)
         slspack_free(Aj);
     }
 
-    if (sizeof(double) != sizeof(SX_FLOAT)) {
+    if (sizeof(double) != sizeof(SX_FLT)) {
         slspack_free(Ax);
     }
 
