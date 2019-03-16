@@ -63,10 +63,10 @@ SLSPack also has two internal solvers, GMRES(m) and BICGSTAB.
 \begin{figure}[!htb]
 \begin{evb}
 {
-    slspack_mat_csr A;
+    SLSPACK_MAT A;
     SLSPACK_SOLVER solver;
-    slspack_vec x;
-    slspack_vec b;
+    SLSPACK_VEC x;
+    SLSPACK_VEC b;
 
     /* setup A, x, b */
     x = slspack_vec_create(n);
@@ -126,8 +126,8 @@ void slspack_solver_create(SLSPACK_SOLVER *s, SLSPACK_SOLVER_TYPE s_type);
 \subsection{Assemble}
 \vb{slspack_solver_assemble} assembles solver object.
 \begin{evb}
-void slspack_solver_assemble(SLSPACK_SOLVER *s, slspack_mat_csr Ax, slspack_vec x,
-    slspack_vec b);
+void slspack_solver_assemble(SLSPACK_SOLVER *s, SLSPACK_MAT Ax, SLSPACK_VEC x,
+    SLSPACK_VEC b);
 \end{evb}
 
 \subsection{Solve}

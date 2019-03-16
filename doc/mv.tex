@@ -7,19 +7,20 @@ SLSPack uses \verb|int| for integer and \verb|double| for floating-point number.
 In this library, matrix indices and array indices follow C style, which start from 0.
 
 \begin{evb}
-typedef struct slspack_mat_csr_
+typedef struct SLSPACK_MAT_
 {
+    double *Ax;
+    int *Ap;
+    int *Aj;
+
     int num_rows;
     int num_cols;
     int num_nnzs;
-    int *Ap;
-    int *Aj;
-    double *Ax;
 
-} slspack_mat_csr;
+} SLSPACK_MAT;
 \end{evb}
 
-The definition of \verb|slspack_mat_csr| is the same as standard definition.
+The definition of \verb|SLSPACK_MAT| is the same as standard definition.
 
 \section{Matrix Management}
 
@@ -30,34 +31,34 @@ The definition of \verb|slspack_mat_csr| is the same as standard definition.
 set arrays to \verb|NULL|.
 
 \begin{evb}
-void slspack_mat_init(slspack_mat_csr *A);
+void slspack_mat_init(SLSPACK_MAT *A);
 \end{evb}
 
 \subsection{Create}
 \vb{slspack_mat_create} creates a CSR matrix using user input.
 \begin{evb}
-slspack_mat_csr slspack_mat_create(int nrows, int ncols, int *Ap, int *Aj, double *Ax);
+SLSPACK_MAT slspack_mat_create(int nrows, int ncols, int *Ap, int *Aj, double *Ax);
 \end{evb}
 
 \subsection{Destroy}
 
 \vb{slspack_mat_destroy} destroys a matrix object and releases memory.
 \begin{evb}
-void slspack_mat_destroy(slspack_mat_csr *csr);
+void slspack_mat_destroy(SLSPACK_MAT *csr);
 \end{evb}
 
 \section{Vector Definition}
 
 \begin{evb}
-typedef struct slspack_vec_
+typedef struct SLSPACK_VEC_
 {
-    int n;
     double *d;
+    int n;
 
-} slspack_vec;
+} SLSPACK_VEC;
 \end{evb}
 
-\vb{slspack_vec} has two members, which are vector length (\vb{n}) and data (memory,
+\vb{SLSPACK_VEC} has two members, which are vector length (\vb{n}) and data (memory,
 \vb{d}).
 
 \section{Vector Management}
@@ -65,14 +66,14 @@ typedef struct slspack_vec_
 \subsection{Create}
 \vb{slspack_vec_create} creates a length \vb{n} floating-point vector.
 \begin{evb}
-slspack_vec slspack_vec_create(int n);
+SLSPACK_VEC slspack_vec_create(int n);
 \end{evb}
 
 \subsection{Destroy}
 
 \vb{slspack_vec_destroy} destroys a vector.
 \begin{evb}
-void slspack_vec_destroy(slspack_vec *v);
+void slspack_vec_destroy(SLSPACK_VEC *v);
 \end{evb}
 
 \subsection{Set Value}
@@ -81,35 +82,35 @@ set vector values.
 
 \vb{slspack_vec_set_value} sets the vector to the same value.
 \begin{evb}
-void slspack_vec_set_value(slspack_vec x, double val);
+void slspack_vec_set_value(SLSPACK_VEC x, double val);
 \end{evb}
 
 
 \vb{slspack_vec_set_value_by_array} sets vector value by a buffer, which has the same length as
 vector.
 \begin{evb}
-void slspack_vec_set_value_by_array(slspack_vec x, double *val);
+void slspack_vec_set_value_by_array(SLSPACK_VEC x, double *val);
 \end{evb}
 
 \vb{slspack_vec_set_value_by_index} sets value to the $i$-th component, $x[i] = val$.
 \begin{evb}
-void slspack_vec_set_value_by_index(slspack_vec x, int i, double val);
+void slspack_vec_set_value_by_index(SLSPACK_VEC x, int i, double val);
 \end{evb}
 
 \subsection{Get Value}
 \vb{slspack_vec_get_value} copies vector's values to a buffer, which should have the same length as
 the vector.
 \begin{evb}
-void slspack_vec_get_value(double *val, slspack_vec x);
+void slspack_vec_get_value(double *val, SLSPACK_VEC x);
 \end{evb}
 
 \vb{slspack_vec_get_value_by_index} gets the value of the $i$-th component.
 \begin{evb}
-double slspack_vec_get_value_by_index(slspack_vec x, int i);
+double slspack_vec_get_value_by_index(SLSPACK_VEC x, int i);
 \end{evb}
 
 \subsection{Copy}
 \vb{slspack_vec_copy} copies data from source to destination.
 \begin{evb}
-void slspack_vec_copy(slspack_vec des, const slspack_vec src);
+void slspack_vec_copy(SLSPACK_VEC des, const SLSPACK_VEC src);
 \end{evb}
