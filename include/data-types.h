@@ -12,20 +12,21 @@
 
 typedef struct SLSPACK_MAT_
 {
+    double *Ax;
+    int *Ap;
+    int *Aj;
+
     int num_rows;
     int num_cols;
     int num_nnzs;
-
-    int *Ap;
-    int *Aj;
-    double *Ax;
 
 } SLSPACK_MAT;
 
 typedef struct SLSPACK_VEC_
 {
-    int n;
     double *d;
+
+    int n;
 
 } SLSPACK_VEC;
 
