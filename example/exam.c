@@ -67,8 +67,8 @@ int main(void)
 
     SLSPACK_MAT A;
     SLSPACK_SOLVER solver;
-    slspack_vec xg;
-    slspack_vec bc;
+    SLSPACK_VEC xg;
+    SLSPACK_VEC bc;
     double tc, ta;
 
     slspack_printf("CSR: laplacian, grid size %d\n", dim);

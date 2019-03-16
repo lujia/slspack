@@ -21,12 +21,12 @@ typedef struct SLSPACK_MAT_
 
 } SLSPACK_MAT;
 
-typedef struct slspack_vec_
+typedef struct SLSPACK_VEC_
 {
     int n;
     double *d;
 
-} slspack_vec;
+} SLSPACK_VEC;
 
 
 /* solver type */
@@ -141,8 +141,8 @@ typedef struct SLSPACK_SOLVER_
 
     /* solver info */
     SLSPACK_SOLVER_TYPE type;
-    slspack_vec rhs;
-    slspack_vec x;
+    SLSPACK_VEC rhs;
+    SLSPACK_VEC x;
 
     /* return */
     double residual;                /* residual, return value */
