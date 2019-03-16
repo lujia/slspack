@@ -1,3 +1,4 @@
+
 #ifndef SLSPACK_DATATYPES_H
 #define SLSPACK_DATATYPES_H
 

@@ -140,9 +140,9 @@ void slspack_solver_assemble(SLSPACK_SOLVER *s, SLSPACK_MAT Ax, SLSPACK_VEC x, S
     A.num_rows = Ax.num_rows;
     A.num_cols = Ax.num_cols;
     A.num_nnzs = Ax.num_nnzs;
-    A.Ap = slspack_copy_on(Ax.Ap, sizeof(int) * (Ax.num_rows + 1));
-    A.Aj = slspack_copy_on(Ax.Aj, sizeof(int) * Ax.num_nnzs);
-    A.Ax = slspack_copy_on(Ax.Ax, sizeof(double) * Ax.num_nnzs);
+    A.Ap = slspack_mem_copy(Ax.Ap, sizeof(int) * (Ax.num_rows + 1));
+    A.Aj = slspack_mem_copy(Ax.Aj, sizeof(int) * Ax.num_nnzs);
+    A.Ax = slspack_mem_copy(Ax.Ax, sizeof(double) * Ax.num_nnzs);
 
     s->rhs = b;
     s->x = x;

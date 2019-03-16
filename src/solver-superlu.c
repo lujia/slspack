@@ -42,10 +42,10 @@ int slspack_solver_superlu(SLSPACK_SOLVER *solver)
     double *b, *Ax;
 
     /* copy */
-    Aj = slspack_copy_on(Ai.Aj, sizeof(int) * nnz);
-    Ap = slspack_copy_on(Ai.Ap, sizeof(int) * (n + 1));
-    Ax = slspack_copy_on(Ai.Ax, sizeof(double) * nnz);
-    b = slspack_copy_on(solver->rhs.d, sizeof(double) * n);
+    Aj = slspack_mem_copy(Ai.Aj, sizeof(int) * nnz);
+    Ap = slspack_mem_copy(Ai.Ap, sizeof(int) * (n + 1));
+    Ax = slspack_mem_copy(Ai.Ax, sizeof(double) * nnz);
+    b = slspack_mem_copy(solver->rhs.d, sizeof(double) * n);
 
     /* matrix A */
     assert(m == n);

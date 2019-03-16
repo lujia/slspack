@@ -12,8 +12,6 @@
 #endif
 #endif
 
-int slspack_verbosity = 2;
-
 #if USE_UNIX /* linux, unix */
 double slspack_get_time(void)
 {
@@ -125,7 +123,7 @@ void slspack_free(void *p)
     free(p);
 }
 
-void slspack_memcpy_on(void *dst, const void *src, size_t n)
+void slspack_memcpy(void *dst, const void *src, size_t n)
 {
     if (n == 0) return;
 
@@ -133,7 +131,7 @@ void slspack_memcpy_on(void *dst, const void *src, size_t n)
     memcpy(dst, src, n);
 }
 
-void * slspack_copy_on(const void *src, size_t n)
+void * slspack_mem_copy(const void *src, size_t n)
 {
     void *dst;
 
@@ -142,7 +140,7 @@ void * slspack_copy_on(const void *src, size_t n)
     assert(src != NULL);
 
     dst = slspack_malloc(n);
-    slspack_memcpy_on(dst, src, n);
+    slspack_memcpy(dst, src, n);
 
     return dst;
 }

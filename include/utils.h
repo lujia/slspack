@@ -28,7 +28,7 @@ void * slspack_malloc(size_t n);
 void * slspack_calloc(size_t n);
 void slspack_free(void *p);
 
-void slspack_memcpy_on(void *dst, const void *src, size_t n);
-void * slspack_copy_on(const void *src, size_t n);
+void slspack_memcpy(void *dst, const void *src, size_t n);
+void * slspack_mem_copy(const void *src, size_t n);
 
 #endif

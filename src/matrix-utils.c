@@ -23,9 +23,9 @@ SLSPACK_MAT slspack_mat_create(int nrows, int ncols, int *Ap, int *Aj, double *A
     A.num_cols = ncols;
     A.num_nnzs = Ap[nrows];
 
-    A.Ap = slspack_copy_on(Ap, sizeof(int) * (nrows + 1));
-    A.Aj = slspack_copy_on(Aj, sizeof(int) * Ap[nrows]);
-    A.Ax = slspack_copy_on(Ax, sizeof(double) * Ap[nrows]);
+    A.Ap = slspack_mem_copy(Ap, sizeof(int) * (nrows + 1));
+    A.Aj = slspack_mem_copy(Aj, sizeof(int) * Ap[nrows]);
+    A.Ax = slspack_mem_copy(Ax, sizeof(double) * Ap[nrows]);
 
     return A;
 }
